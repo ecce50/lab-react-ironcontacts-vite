@@ -3,14 +3,14 @@ import { useState } from "react";
 import contactsData from "./contacts.json";
 
 function App() {
-  const [contacts, setContacts] = useState(contactsData.slice(0, 5));
-  const [contactsDataFiltered, setContactsDataFiltered] =
-    useState(contactsData);
+  const [contacts, setContacts] = useState(contactsData.slice(0, 5)); // creating a variable consisting of the first five contact in the contactsData array
+  const [contactsDataFiltered, setContactsDataFiltered] = // I need to create a new array of filtered contacts here
+ 
 
-  function addRandomContact() {
-    const contactsFiltered = contactsData.filter(
+  function addRandomContact() { // declaring new function to add a random contact from the contactsData array
+    const contactsFiltered = contactsData.filter( // filtering the data
       (contactData) =>
-        !contacts.some((contact) => contact.id === contactData.id)
+        !contacts.some((contact) => contact.id === contactData.id) 
     );
     setContactsDataFiltered(contactsFiltered);
     setContacts([
